@@ -8,9 +8,9 @@ import { findMovieReviewsById } from 'services/api';
 
 const Reviews = () => {
   const { movieId } = useParams();
-  console.log('movieId', movieId);
-  //const location = useLocation();
-  //const backLinkHref = useRef(location.state?.from ?? '/');
+  console.log('movieId reviews', movieId);
+  //   //const location = useLocation();
+  //   //const backLinkHref = useRef(location.state?.from ?? '/');
 
   const [movieReviews, setMovieReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -37,8 +37,8 @@ const Reviews = () => {
 
   return (
     <div>
-      rewievs
-      {/* {isLoading && <Loader />}
+      reviews
+      {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
       {/* {movieReviews !== null && (
         <ul>
@@ -61,8 +61,7 @@ const Reviews = () => {
         <p>We have not review yet</p>
       ) : (
         <p>Later...</p>
-      )}{' '}
-      */}
+      )}
     </div>
   );
 };
