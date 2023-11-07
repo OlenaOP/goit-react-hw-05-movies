@@ -31,16 +31,19 @@ const HomePage = () => {
       <h2>Trending today</h2>
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
-      {movies !== null &&
-        movies.results.map(movie => (
-          <Link
-            // state={{ from: location }}
-            to={`/post-details/${movie.id}`}
-            key={movie.id}
-          >
-            <p>{movie.name || movie.title}</p>
-          </Link>
-        ))}
+      {movies !== null && (
+        <ul>
+          {movies.results.map(movie => (
+            <Link
+              // state={{ from: location }}
+              to={`/post-details/${movie.id}`}
+              key={movie.id}
+            >
+              <li>{movie.name || movie.title}</li>
+            </Link>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
