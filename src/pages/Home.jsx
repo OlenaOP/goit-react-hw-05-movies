@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchTrendMovies } from 'services/api';
 
-const HomePage = () => {
+const Home = () => {
   const [movies, setMovies] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -36,7 +36,7 @@ const HomePage = () => {
           {movies.results.map(movie => (
             <Link
               // state={{ from: location }}
-              to={`/post-details/${movie.id}`}
+              to={`/movies/${movie.id}`}
               key={movie.id}
             >
               <li>{movie.name || movie.title}</li>
@@ -48,4 +48,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

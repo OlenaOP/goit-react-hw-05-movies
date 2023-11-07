@@ -8,6 +8,27 @@ export const fetchTrendMovies = async () => {
   return data;
 };
 
+export const findMovieById = async movieId => {
+  const { data } = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`
+  );
+  return data;
+};
+
+export const findMovieCreditsById = async movieId => {
+  const { data } = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`
+  );
+  return data;
+};
+
+export const findMovieReviewsById = async movieId => {
+  const { data } = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+  );
+  return data;
+};
+
 export const fetchPosts = async () => {
   const { data } = await axios.get(
     'https://jsonplaceholder.typicode.com/posts/'

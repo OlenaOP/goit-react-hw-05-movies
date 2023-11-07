@@ -8,10 +8,10 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 
 import { StyledAppContainer, StyledNavLink } from './App.styled.js';
 import Loader from 'components/Loader';
-import MoviesPage from 'pages/MoviesPage.jsx';
-import MovieDetailsPage from 'pages/MovieDetailsPage.jsx';
+import Movies from 'pages/Movies.jsx';
 
-const HomePage = lazy(() => import('pages/HomePage'));
+const Home = lazy(() => import('pages/Home'));
+const MovieDetails = lazy(() => import('pages/MovieDetails'));
 const PostsPage = lazy(() => import('pages/PostsPage'));
 const SearchPage = lazy(() => import('pages/SearchPage'));
 const PostDetailsPage = lazy(() => import('pages/PostDetailsPage'));
@@ -53,9 +53,9 @@ export const App = () => {
 
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/movies/:postId/*" element={<MovieDetailsPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId/*" element={<MovieDetails />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/search" element={<SearchPage />} />
           {/* /posts/d12dWAF@ */}
