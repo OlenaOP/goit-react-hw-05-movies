@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 // import HomePage from 'pages/HomePage';
 // import PostsPage from 'pages/PostsPage';

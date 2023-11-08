@@ -12,7 +12,7 @@ const Reviews = () => {
   //   //const location = useLocation();
   //   //const backLinkHref = useRef(location.state?.from ?? '/');
 
-  const [movieReviews, setMovieReviews] = useState(null);
+  const [movieReviews, setMovieReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -25,7 +25,7 @@ const Reviews = () => {
         const data = await findMovieReviewsById(movieId);
         console.log('findMovieReviewsById', data);
         console.log('findMovieReviewsById', data.results, data.results.length);
-        setMovieReviews(data);
+        setMovieReviews(data.results);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -38,17 +38,14 @@ const Reviews = () => {
 
   return (
     <div>
-      reviews
-      {/*Помилки немає, якщо закоментувати звідси */}
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
-      {movieReviews.results.length === 0 ? (
+      {movieReviews.length === 0 ? (
         <p>We don't have any reviews for this movie.</p>
       ) : (
         <div>
-          <p>Later...</p>
           <ul>
-            {movieReviews.results.map(review => {
+            {movieReviews.map(review => {
               return (
                 <li>
                   <h4>{review.author}</h4>
@@ -59,7 +56,6 @@ const Reviews = () => {
           </ul>
         </div>
       )}
-      {/*Помилки немає, якщо закоментувати до сюди */}
     </div>
   );
 };

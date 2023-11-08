@@ -1,12 +1,5 @@
-import React, { Suspense, lazy, useEffect, useRef, useState } from 'react';
-import {
-  Link,
-  NavLink,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from 'react-router-dom';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
+import { NavLink, Route, Routes, useParams } from 'react-router-dom';
 // import PostCommentsPage from './PostCommentsPage';
 import Loader from 'components/Loader';
 import ErrorMessage from 'components/ErrorMessage';
