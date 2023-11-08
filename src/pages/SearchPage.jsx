@@ -2,7 +2,7 @@ import { ReactComponent as IconSearch } from 'assets/images/search.svg';
 import ErrorMessage from 'components/ErrorMessage';
 import Loader from 'components/Loader';
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { findPostById } from 'services/api';
 
 // (async () => { // -- IIFE (Immediately invoked function expression)
