@@ -24,6 +24,7 @@ const Reviews = () => {
         setIsLoading(true);
         const data = await findMovieReviewsById(movieId);
         console.log('findMovieReviewsById', data);
+        console.log('findMovieReviewsById', data.results, data.results.length);
         setMovieReviews(data);
       } catch (error) {
         setError(error.message);
@@ -38,30 +39,26 @@ const Reviews = () => {
   return (
     <div>
       reviews
+      {/*     
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
-      {/* {movieReviews !== null && (
-        <ul>
-          {movieReviews.cast.map(cast => {
-            return (
-              <li>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
-                  alt={cast.name}
-                  width="100px"
-                />
-                <p>{cast.name}</p>
-                <p>Character: {cast.character}</p>
-              </li>
-            );
-          })}
-        </ul>
-      )} */}
       {movieReviews.results.length === 0 ? (
-        <p>We have not review yet</p>
+        <p>We don't have any reviews for this movie.</p>
       ) : (
-        <p>Later...</p>
-      )}
+        <div>
+          <p>Later...</p>
+          {/* <ul>
+            {movieReviews.results.map(review => {
+              return (
+                <li>
+                  <h4>{review.author}</h4>
+                  <p>{review.content}</p>
+                </li>
+              );
+            })}
+          </ul> */}
+      {/* </div>
+      )} */}
     </div>
   );
 };
