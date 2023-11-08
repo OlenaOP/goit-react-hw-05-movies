@@ -39,7 +39,7 @@ const Reviews = () => {
   return (
     <div>
       reviews
-      {/*     
+      {/*Помилки немає, якщо закоментувати звідси */}
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
       {movieReviews.results.length === 0 ? (
@@ -47,7 +47,7 @@ const Reviews = () => {
       ) : (
         <div>
           <p>Later...</p>
-          {/* <ul>
+          <ul>
             {movieReviews.results.map(review => {
               return (
                 <li>
@@ -56,9 +56,10 @@ const Reviews = () => {
                 </li>
               );
             })}
-          </ul> */}
-      {/* </div>
-      )} */}
+          </ul>
+        </div>
+      )}
+      {/*Помилки немає, якщо закоментувати до сюди */}
     </div>
   );
 };
