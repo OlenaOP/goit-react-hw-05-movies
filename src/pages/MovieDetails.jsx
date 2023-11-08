@@ -1,13 +1,17 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
-import { NavLink, Route, Routes, useParams } from 'react-router-dom';
-// import PostCommentsPage from './PostCommentsPage';
+import React, { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import {
+  NavLink,
+  Link,
+  Route,
+  Routes,
+  useParams,
+  useLocation,
+} from 'react-router-dom';
 import Loader from 'components/Loader';
 import ErrorMessage from 'components/ErrorMessage';
 import { StyledMovieDetailsContainer } from './MovieDetails.styled.js';
 
 import { findMovieById } from 'services/api';
-// import Cast from './Cast.jsx';
-// import Reviews from './Reviews.jsx';
 
 const Cast = lazy(() => import('pages/Cast'));
 const Reviews = lazy(() => import('pages/Reviews'));
@@ -15,8 +19,8 @@ const Reviews = lazy(() => import('pages/Reviews'));
 const MovieDetails = () => {
   const { movieId } = useParams();
   console.log('movieId', movieId);
-  //const location = useLocation();
-  //const backLinkHref = useRef(location.state?.from ?? '/');
+  const location = useLocation();
+  const backLinkHref = useRef(location.state?.from ?? '/');
 
   const [movieDetails, setMovieDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +47,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {/* <Link to={backLinkHref.current}>Go Back</Link> */}
+      <Link to={backLinkHref.current}>&larr;Go Back</Link>
 
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}

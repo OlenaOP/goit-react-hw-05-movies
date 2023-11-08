@@ -7,28 +7,6 @@ export const StyledAppContainer = styled.div`
   margin: 0 auto;
   padding: 0px 15px;
 
-  // .postList {
-  //   padding: 0;
-  //   list-style-type: none;
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 25px;
-  // }
-
-  // .postListItem {
-  //   padding: 20px;
-  //   border: 1px solid black;
-  //   border-radius: 20px;
-  // }
-
-  // .error {
-  //   padding: 20px;
-  //   font-size: 24px;
-  //   border: 1px solid black;
-  //   background-color: red;
-  //   color: white;
-  // }
-
   .header {
     padding: 20px;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
@@ -39,20 +17,14 @@ export const StyledAppContainer = styled.div`
 
 export const StyledNavLink = styled(NavLink)`
   color: black;
-  // border: 1px solid black;
-  // border-radius: 10px;
   display: inline-block;
-  // padding: 20px;
   font-size: 22px;
   font-weight: bold;
   text-decoration: none;
   margin-right: 15px;
-
   transition: all 0.3s;
 
   &.active {
-    // border: 1px solid white;
-    // background-color: black;
     color: red;
   }
 `;

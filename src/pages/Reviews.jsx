@@ -9,8 +9,6 @@ import { findMovieReviewsById } from 'services/api';
 const Reviews = () => {
   const { movieId } = useParams();
   console.log('movieId reviews', movieId);
-  //   //const location = useLocation();
-  //   //const backLinkHref = useRef(location.state?.from ?? '/');
 
   const [movieReviews, setMovieReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

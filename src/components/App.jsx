@@ -8,13 +8,10 @@ import { Route, Routes } from 'react-router-dom';
 
 import { StyledAppContainer, StyledNavLink } from './App.styled.js';
 import Loader from 'components/Loader';
-import Movies from 'pages/Movies.jsx';
 
 const Home = lazy(() => import('pages/Home'));
 const MovieDetails = lazy(() => import('pages/MovieDetails'));
-const PostsPage = lazy(() => import('pages/PostsPage'));
-const SearchPage = lazy(() => import('pages/SearchPage'));
-const PostDetailsPage = lazy(() => import('pages/PostDetailsPage'));
+const Movies = lazy(() => import('pages/Movies'));
 
 /*
 Маршрутизація:
@@ -42,12 +39,6 @@ export const App = () => {
           <StyledNavLink className="header-link" to="/movies">
             Movies
           </StyledNavLink>
-          <StyledNavLink className="header-link" to="/posts">
-            Posts
-          </StyledNavLink>
-          <StyledNavLink className="header-link" to="/search">
-            Search
-          </StyledNavLink>
         </nav>
       </header>
 
@@ -56,10 +47,6 @@ export const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/movies/:movieId/*" element={<MovieDetails />} />
-          <Route path="/posts" element={<PostsPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          {/* /posts/d12dWAF@ */}
-          <Route path="/post-details/:postId/*" element={<PostDetailsPage />} />
         </Routes>
       </Suspense>
     </StyledAppContainer>

@@ -29,6 +29,13 @@ export const findMovieReviewsById = async movieId => {
   return data;
 };
 
+export const findMoviesByQuery = async query => {
+  const { data } = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${API_KEY}`
+  );
+  return data;
+};
+
 export const fetchPosts = async () => {
   const { data } = await axios.get(
     'https://jsonplaceholder.typicode.com/posts/'
